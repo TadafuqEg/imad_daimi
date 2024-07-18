@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'K 2 Help')</title>
+    <title>@yield('title', 'Imed Daimi')</title>
     <link rel="icon" href="{{ asset('/logos/help1.png') }}" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -123,7 +123,7 @@ body {
         <img src="{{ asset('logos/help_icon.png') }}" alt="">
     </div>
     <div class="text-center mt-4 name" style="text-align: center;">
-        K 2 HELP Dashboard
+        Imed Daimi Dashboard
     </div>
     
     @if ($errors->any())

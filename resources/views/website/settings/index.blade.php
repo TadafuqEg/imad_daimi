@@ -52,7 +52,7 @@
                               
                               
                              
-                              <a href="{{url('/setting/edit/'.$setting->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/setting/edit/'.$setting->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-pen" style="font-size: 1rem; color: rgb(0,255,0);"></span>
                               </a>
                              

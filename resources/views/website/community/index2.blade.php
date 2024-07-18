@@ -359,7 +359,7 @@ button[type="button"]:hover {
         formData.append('post', content);
         formData.append('image', fileInput.files[0]);
 
-        fetch('/create_post', {
+        fetch('/admin-dashboard/create_post', {
           method: 'POST',
           headers: {
             'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -521,7 +521,7 @@ button[type="button"]:hover {
             formData.append('key', x);
             formData.append('id', postId);
 
-            fetch('/update_post', {
+            fetch('/admin-dashboard/update_post', {
               method: 'POST',
               headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -618,7 +618,7 @@ button[type="button"]:hover {
       function openCommentsModal(element) {
         let post_id= element.dataset.id;
         $.ajax({
-            url: 'post_comments/'+post_id, // Replace with the actual API endpoint URL
+            url: 'admin-dashboard/post_comments/'+post_id, // Replace with the actual API endpoint URL
             method: 'GET',
             success: function(response) {
                     // Handle the response
@@ -733,7 +733,7 @@ button[type="button"]:hover {
           
           
 
-          fetch('/create_replay', {
+          fetch('/admin-dashboard/create_replay', {
             method: 'POST',
             headers: {
               'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -794,7 +794,7 @@ button[type="button"]:hover {
           
           
 
-          fetch('/create_comment', {
+          fetch('/admin-dashboard/create_comment', {
             method: 'POST',
             headers: {
               'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -899,7 +899,7 @@ button[type="button"]:hover {
             
             formData.append('id', commentId);
 
-            fetch('/update_comment', {
+            fetch('/admin-dashboard/update_comment', {
               method: 'POST',
               headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -941,7 +941,7 @@ button[type="button"]:hover {
             
             formData.append('id', replayId);
 
-            fetch('/update_replay', {
+            fetch('/admin-dashboard/update_replay', {
               method: 'POST',
               headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token in the request headers
@@ -974,7 +974,7 @@ button[type="button"]:hover {
       
       setInterval(function() {
         $.ajax({
-            url: 'unseen_posts', // Replace with the actual API endpoint URL
+            url: 'admin-dashboard/unseen_posts', // Replace with the actual API endpoint URL
             method: 'GET',
             success: function(response) {
               // Handle the response

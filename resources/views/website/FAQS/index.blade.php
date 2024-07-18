@@ -77,11 +77,11 @@
                               
                               
                              
-                              <a href="{{url('/FAQ/edit/'.$FAQ->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/FAQ/edit/'.$FAQ->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-pen" style="font-size: 1rem; color: rgb(0,255,0);"></span>
                               </a>
                              
-                              <a href="{{url('/FAQ/delete/'.$FAQ->id)}}">
+                              <a href="{{url('/admin-dashboard/FAQ/delete/'.$FAQ->id)}}">
                                 <span class="bi bi-trash" style="font-size: 1rem; color: rgb(255,0,0);"></span>
                               </a>
                              

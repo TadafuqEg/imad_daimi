@@ -101,7 +101,7 @@ class HomeController extends ApiController
 
         ]);
        
-      return redirect('/FAQs');
+      return redirect('/admin-dashboard/FAQs');
 
     }
 
@@ -131,12 +131,12 @@ class HomeController extends ApiController
             'answer' => $request->answer,
             'is_active' => $is_active,
             ]);
-             return redirect('/FAQs');
+             return redirect('/admin-dashboard/FAQs');
 
     }
 
     public function delete_FAQ($id){
         FAQ::where('id', $id)->delete();
-        return redirect('/FAQs');
+        return redirect('/admin-dashboard/FAQs');
     }
 }

@@ -70,11 +70,11 @@
                               
                               
                              
-                              <a href="{{url('/dependency/edit/'.$dependency->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/dependency/edit/'.$dependency->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-pen" style="font-size: 1rem; color: rgb(0,255,0);"></span>
                               </a>
                              
-                              <a href="{{url('/dependency/delete/'.$dependency->id)}}">
+                              <a href="{{url('/admin-dashboard/dependency/delete/'.$dependency->id)}}">
                                 <span class="bi bi-trash" style="font-size: 1rem; color: rgb(255,0,0);"></span>
                               </a>
                              

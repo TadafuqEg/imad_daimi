@@ -48,7 +48,7 @@ class SettingController extends ApiController
             $input['value']=$request->value;
             $setting->fill($input)->save();
         }
-        return redirect('/settings');
+        return redirect('/admin-dashboard/settings');
 
     }
 }

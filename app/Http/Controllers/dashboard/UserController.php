@@ -67,7 +67,7 @@ class UserController extends Controller
             
             $user->assignRole([$role->id]);
 
-          return redirect('/users');
+          return redirect('/admin-dashboard/users');
 
     }
  
@@ -100,7 +100,7 @@ class UserController extends Controller
             'email'=> $request->email ,
             'phone'=>$request->phone_number,
             'username'=> $request->username]);
-             return redirect('/users');
+             return redirect('/admin-dashboard/users');
 
     }
 
@@ -110,6 +110,6 @@ class UserController extends Controller
      public function delete($id)
     {
         User::where('id', $id)->delete();
-        return redirect('/users');
+        return redirect('/admin-dashboard/users');
     }
 }

@@ -79,7 +79,7 @@
                               
                               
                              
-                              <a href="{{url('/help_request/show/'.$request->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/help_request/show/'.$request->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-eye" style="font-size: 1rem; color: rgb(0,0,255);"></span>
                               </a>
 

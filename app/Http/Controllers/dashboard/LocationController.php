@@ -62,7 +62,7 @@ class LocationController extends ApiController
 
             ]);
            
-          return redirect('/states');
+          return redirect('/admin-dashboard/states');
 
     }
 
@@ -90,13 +90,13 @@ class LocationController extends ApiController
             Country::where('id',$id)->update([ 'name' => $request->name,
             'is_active' => $is_active,
             ]);
-             return redirect('/states');
+             return redirect('/admin-dashboard/states');
 
     }
 
     public function delete_state($id){
         Country::where('id', $id)->delete();
-        return redirect('/states');
+        return redirect('/admin-dashboard/states');
     }
 
     //////////////////////////////////////////////////Dependencies////////////////////////////////
@@ -148,7 +148,7 @@ class LocationController extends ApiController
 
             ]);
            
-          return redirect('/dependencies');
+          return redirect('/admin-dashboard/dependencies');
 
     }
 
@@ -184,13 +184,13 @@ class LocationController extends ApiController
             'country_id'=>$request->state,
             'is_active' => $is_active,
             ]);
-             return redirect('/dependencies');
+             return redirect('/admin-dashboard/dependencies');
 
     }
 
     public function delete_dependency($id){
         City::where('id', $id)->delete();
-        return redirect('/dependencies');
+        return redirect('/admin-dashboard/dependencies');
     }
 
     //////////////////////////////////////////////////Dependencies////////////////////////////////
@@ -251,7 +251,7 @@ class LocationController extends ApiController
 
             ]);
            
-          return redirect('/streets');
+          return redirect('/admin-dashboard/streets');
 
     }
 
@@ -298,13 +298,13 @@ class LocationController extends ApiController
             'lat'=>$request->lat,
             'lng'=>$request->lng
             ]);
-             return redirect('/streets');
+             return redirect('/admin-dashboard/streets');
 
     }
 
     public function delete_street($id){
         Street::where('id', $id)->delete();
-        return redirect('/streets');
+        return redirect('/admin-dashboard/streets');
     }
 
     public function cities_of_country(Request $request){

@@ -146,7 +146,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/admin-dashboard" class="brand-link">
 
         <span class="brand-text font-weight-light">Imad Daimi</span>
     </a>
@@ -162,7 +162,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/users')}}" class="d-block">Users</a>
+                <a href="{{url('/admin-dashboard/users')}}" class="d-block">Users</a>
             </div>
         </div>
        
@@ -173,7 +173,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/states')}}" class="d-block">States</a>
+                <a href="{{url('/admin-dashboard/states')}}" class="d-block">States</a>
             </div>
         </div>
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -183,7 +183,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/dependencies')}}" class="d-block">Dependencies</a>
+                <a href="{{url('/admin-dashboard/dependencies')}}" class="d-block">Dependencies</a>
             </div>
         </div>
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -193,7 +193,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/streets')}}" class="d-block">Streets</a>
+                <a href="{{url('/admin-dashboard/streets')}}" class="d-block">Streets</a>
             </div>
         </div>
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -203,7 +203,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/help_requests')}}" class="d-block">Help Requests</a>
+                <a href="{{url('/admin-dashboard/help_requests')}}" class="d-block">Help Requests</a>
             </div>
         </div>
 
@@ -214,7 +214,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/volunteers')}}" class="d-block">Volunteers</a>
+                <a href="{{url('/admin-dashboard/volunteers')}}" class="d-block">Volunteers</a>
             </div>
         </div>
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -224,7 +224,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/FAQs')}}" class="d-block">FAQs</a>
+                <a href="{{url('/admin-dashboard/FAQs')}}" class="d-block">FAQs</a>
             </div>
         </div>
 
@@ -235,7 +235,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/settings')}}" class="d-block">Settings</a>
+                <a href="{{url('/admin-dashboard/settings')}}" class="d-block">Settings</a>
             </div>
         </div>
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -245,7 +245,7 @@
                 width: 2rem;">
             </div>
             <div class="info">
-                <a href="{{url('/community')}}" class="d-block">Community</a>
+                <a href="{{url('/admin-dashboard/community')}}" class="d-block">Community</a>
             </div>
         </div>
         

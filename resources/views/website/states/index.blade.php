@@ -68,11 +68,11 @@
                               
                               
                              
-                              <a href="{{url('/state/edit/'.$state->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/state/edit/'.$state->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-pen" style="font-size: 1rem; color: rgb(0,255,0);"></span>
                               </a>
                              
-                              <a href="{{url('/state/delete/'.$state->id)}}">
+                              <a href="{{url('/admin-dashboard/state/delete/'.$state->id)}}">
                                 <span class="bi bi-trash" style="font-size: 1rem; color: rgb(255,0,0);"></span>
                               </a>
                              

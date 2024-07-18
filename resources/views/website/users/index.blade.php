@@ -72,11 +72,11 @@
                               
                               
                              
-                              <a href="{{url('/user/edit/'.$user->id)}}" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/user/edit/'.$user->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-pen" style="font-size: 1rem; color: rgb(0,255,0);"></span>
                               </a>
                              
-                              <a href="{{url('/user/delete/'.$user->id)}}">
+                              <a href="{{url('/admin-dashboard/user/delete/'.$user->id)}}">
                                 <span class="bi bi-trash" style="font-size: 1rem; color: rgb(255,0,0);"></span>
                               </a>
                              

@@ -41,7 +41,7 @@ class AuthController extends Controller
         }
         if (Auth::attempt(['email' => request('email'),'password' => request('password')])){
 
-            return redirect('/home');
+            return redirect('/admin-dashboard/home');
         }else{
 
             return back()->withErrors(['msg' => 'There is something wrong']);
@@ -56,7 +56,7 @@ class AuthController extends Controller
         Auth::logout();
        
        // auth()->guard('admin')->logout();
-        return redirect('/login');
+        return redirect('/admin-dashboard/login');
     }
 
     public function home(){

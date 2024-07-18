@@ -11,7 +11,7 @@
             </a>
         </li> --}}
         <li class="nav-item">
-            <a href="{{ url('/companies') }}" class="nav-link {{ request()->is('companies') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/companies') }}" class="nav-link {{ request()->is('admin-dashboard/companies') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Companies
@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/warehouses') }}" class="nav-link {{ request()->is('warehouses') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/warehouses') }}" class="nav-link {{ request()->is('admin-dashboard/warehouses') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Warehouses
@@ -27,7 +27,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/sectors') }}" class="nav-link {{ request()->is('sectors') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/sectors') }}" class="nav-link {{ request()->is('admin-dashboard/sectors') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Sectors
@@ -37,7 +37,7 @@
 
 
         <li class="nav-item">
-            <a href="{{ url('/categories') }}" class="nav-link {{ request()->is('categories') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/categories') }}" class="nav-link {{ request()->is('admin-dashboard/categories') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Categories
@@ -45,7 +45,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/units') }}" class="nav-link {{ request()->is('units') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/units') }}" class="nav-link {{ request()->is('admin-dashboard/units') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Units
@@ -53,7 +53,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{url('/products')}}" class="nav-link {{ (request()->is('products')) ? 'active' : '' }}">
+            <a href="{{url('/admin-dashboard/products')}}" class="nav-link {{ (request()->is('admin-dashboard/products')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Products
@@ -61,7 +61,7 @@
             </a>
         </li> 
         <li class="nav-item">
-            <a href="{{ url('/roles') }}" class="nav-link {{ request()->is('roles') ? 'active' : '' }}">
+            <a href="{{ url('/admin-dashboard/roles') }}" class="nav-link {{ request()->is('admin-dashboard/roles') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Roles
