@@ -148,7 +148,7 @@
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
 
-        <span class="brand-text font-weight-light">K 2 HELP</span>
+        <span class="brand-text font-weight-light">Imad Daimi</span>
     </a>
 
     <!-- Sidebar -->
