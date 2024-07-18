@@ -8,7 +8,7 @@
     
     <link href="{{asset('website/css/style.css')}}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
@@ -29,9 +29,9 @@
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
-            <li><a href="./arabic-news.html">الأخبار</a></li>
-            <li><a href="./programs-ar.html">البرامج</a></li>
-            <li><a href="./contact-ar.html">التواصل</a></li>
+            <li><a href="">الأخبار</a></li>
+            <li><a href="">البرامج</a></li>
+            <li><a href="">التواصل</a></li>
 
         </div>
         <div class="search-icon">
@@ -163,21 +163,25 @@
         </div>
         <div class="sec-6 contact">
             <div class="sec6-content">
-                <div class="form" >
-                    <h5>اتصلــــوا بنـــــا</h5>
-                    <p>نحن هنا للإجابة على جميع استفساراتكم</p>
-                    <div class="form-inputs form-inputs-1">
-                        <input id="first-name" placeholder="الاسم الاول" type="text" />
-                        <input id="last-name" placeholder="الاسم الاخير" type="text" />
-                    </div>
-                    <div class="form-inputs">
-                        <input id="email" placeholder="البريد الإلكتروني" type="text" />
-                    </div>
-                    <div class="form-inputs">
-                        <input id="phone" placeholder="رقـم الهاتف" type="number" />
-                    </div>
-                    <textarea id="message" placeholder="الرسالـــة" class="text-area"></textarea>
-                    <a><button>إرســــــــــال</button></a>
+                <div class="form">
+                    <form id="contact-form-container">
+                        <h5>اتصلــــوا بنـــــا</h5>
+                        <p>نحن هنا للإجابة على جميع استفساراتكم</p>
+                        <div class="form-inputs form-inputs-1">
+                            <input id="first-name" placeholder="الاسم الاول" type="text" />
+                            <input id="last-name" placeholder="الاسم الاخير" type="text" />
+                        </div>
+                        <div class="form-inputs">
+                            <input id="email" placeholder="البريد الإلكتروني" type="text" />
+                        </div>
+                        <div class="form-inputs">
+                            <input id="phone" placeholder="رقـم الهاتف" type="number" />
+                        </div>
+                        <textarea id="message" placeholder="الرسالـــة" class="text-area"></textarea>
+                        <a><button>إرســــــــــال</button></a>
+
+                    </form>
+                    
                 </div>
                 <div id="map" class="map">
                     <iframe
@@ -238,9 +242,9 @@
                     customSelect.classList.remove('open');
 
                     // Redirect based on selected value
-                    if (value === 'en') {
-                        window.location.href = '../index.html'; // Replace with actual URL
-                    }
+                    // if (value === 'en') {
+                    //     window.location.href = '../index.html'; // Replace with actual URL
+                    // }
                 });
             });
 
@@ -253,6 +257,39 @@
         });
 
     </script>
+    <script>
+        $(document).ready(function() {
+           $('#contact-form-container').on('submit', function(event) {
+              event.preventDefault(); // Prevent default form submission
+     
+              // Get form data
+              var csrfToken = $('meta[name="csrf-token"]').attr('content');
+              var formData = {
+                 _token: csrfToken,
+                 first_name: $('#first-name').val(),
+                 last_name: $('#last-name').val(),
+                 email: $('#email').val(),
+                 phone: $('#phone').val(),
+                 message: $('#message').val()
+              };
+     
+              // Submit form data via AJAX
+              $.ajax({
+                 url: '/contact-us', // Replace with your actual controller route
+                 type: 'POST',
+                 data: formData,
+                 success: function(response) {
+                    // Handle the success response here
+                    console.log(response);
+                 },
+                 error: function(xhr, status, error) {
+                    // Handle the error response here
+                    console.error(error);
+                 }
+              });
+           });
+        });
+     </script>
 </body>
 
 </html>

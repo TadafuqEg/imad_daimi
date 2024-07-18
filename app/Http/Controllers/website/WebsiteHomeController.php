@@ -25,4 +25,8 @@ class WebsiteHomeController extends ApiController
     public function home(){
         return view('website2.home');
     }
+
+    public function contact_us(Request $request){
+        dd($request->all());
+    }
 }
