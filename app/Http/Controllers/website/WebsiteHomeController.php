@@ -27,6 +27,6 @@ class WebsiteHomeController extends ApiController
     }
 
     public function contact_us(Request $request){
-        dd($request->all());
+        return $this->sendResponse(null,'سوف نقوم بالرد عليكم فى اقرب وقت');
     }
 }
