@@ -15,6 +15,46 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        .popup {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(
+                0,
+                0,
+                0,
+                0.4
+            );
+            display: none;
+        }
+        .popup-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888888;
+            width: 30%;
+            font-weight: bolder;
+        }
+        .popup-content button {
+            display: block;
+            margin: 0 auto;
+        }
+        .show {
+            display: block;
+        }
+    
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -168,16 +208,27 @@
                         <h5>اتصلــــوا بنـــــا</h5>
                         <p>نحن هنا للإجابة على جميع استفساراتكم</p>
                         <div class="form-inputs form-inputs-1">
-                            <input id="first-name" placeholder="الاسم الاول" type="text" />
-                            <input id="last-name" placeholder="الاسم الاخير" type="text" />
+                            <div style="margin-bottom: 20px;width: 50%;">
+                                <input id="first-name" placeholder="الاسم الاول" type="text" style="margin-bottom: 0px;" />
+                                <span id="first-name-error" class="error-message"></span>
+                            </div>
+                            <div style="margin-bottom: 20px;width: 50%;">
+                                <input id="last-name" placeholder="الاسم الاخير" type="text" style="margin-bottom: 0px;" />
+                                <span id="last-name-error" class="error-message"></span>
+                            </div>
+                            
+                            
                         </div>
-                        <div class="form-inputs">
-                            <input id="email" placeholder="البريد الإلكتروني" type="text" />
+                        <div class="form-inputs" style="display: block;margin-bottom: 20px;">
+                            <input id="email" placeholder="البريد الإلكتروني" type="text" style="margin-bottom: 0px;" />
+                            <span id="email-error" class="error-message"></span>
                         </div>
-                        <div class="form-inputs">
-                            <input id="phone" placeholder="رقـم الهاتف" type="number" />
+                        <div class="form-inputs" style="display: block;margin-bottom: 20px;">
+                            <input id="phone" placeholder="رقـم الهاتف" type="number" style="margin-bottom: 0px;"/>
+                            <span id="phone-error" class="error-message"></span>
                         </div>
                         <textarea id="message" placeholder="الرسالـــة" class="text-area"></textarea>
+                        <span id="message-error" class="error-message"></span>
                         <a><button>إرســــــــــال</button></a>
 
                     </form>
@@ -196,6 +247,15 @@
             </div>
         </div>
 
+    </div>
+    <div id="myPopup" class="popup">
+        <div class="popup-content" style="text-align: center;">
+            <h1 style="color: green">
+                شكرا لمشاركتكم
+            </h1>
+            <p>سوف نقوم بالرد عليكم فى أقرب وقت</p>
+            
+        </div>
     </div>
     <div class="footer">
         <div class="footer-top">
@@ -262,6 +322,10 @@
            $('#contact-form-container').on('submit', function(event) {
               event.preventDefault(); // Prevent default form submission
      
+              var isValid = validateForm();
+                if (!isValid) {
+                    return; // If validation fails, do not proceed
+                }
               // Get form data
               var csrfToken = $('meta[name="csrf-token"]').attr('content');
               var formData = {
@@ -280,8 +344,16 @@
                  data: formData,
                  success: function(response) {
                     // Handle the success response here
-                    console.log(response);
-                    showPopup('Success! Form submitted successfully.');
+                    // console.log(response);
+                    //showPopup('Success! Form submitted successfully.');
+                    let myPopup = $('#myPopup');
+                    myPopup.addClass("show");
+                    $('#contact-form-container')[0].reset();
+                    setTimeout(function() {
+                           
+                                myPopup.removeClass("show"); // Remove the popup after 3 seconds
+                            
+                        }, 3500); 
                  },
                  error: function(xhr, status, error) {
                     // Handle the error response here
@@ -289,17 +361,90 @@
                  }
               });
            });
-           function showPopup(message) {
-                var popup = $('<div class="popup">' + message + '</div>'); // Create the popup element
-                $('body').append(popup); // Append the popup to the body
 
-                setTimeout(function() {
-                    popup.fadeOut('slow', function() {
-                    $(this).remove(); // Remove the popup after 3 seconds
-                    });
-                }, 3000); // Set the duration for the popup to disappear (in milliseconds)
+           closePopup.addEventListener(
+                "click",
+                function () {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            );
+            window.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target == myPopup) {
+                        myPopup.classList.remove(
+                            "show"
+                        );
+                    }
+                }
+            );
+            // Append the popup to the body
+
+            // Set the duration for the popup to disappear (in milliseconds)
+            function validateForm() {
+            var isValid = true;
+
+            // Clear previous error messages
+            $('.error-message').text('');
+
+            // Check if first name is empty
+            if ($('#first-name').val().trim() === '') {
+                isValid = false;
+                $('#first-name-error').text('الاسم الأول مطلوب.');
+                $('#first-name').css('border-color', 'red');
+            } else {
+                $('#first-name').css('border-color', '');
             }
+
+            // Check if last name is empty
+            if ($('#last-name').val().trim() === '') {
+                isValid = false;
+                $('#last-name-error').text('الاسم الأخير مطلوب.');
+                $('#last-name').css('border-color', 'red');
+            } else {
+                $('#last-name').css('border-color', '');
+            }
+
+            // Check if email is valid
+            var email = $('#email').val().trim();
+            if (email === '' || !isValidEmail(email)) {
+                isValid = false;
+                $('#email-error').text('يرجى إدخال بريد إلكتروني صالح.');
+                $('#email').css('border-color', 'red');
+            } else {
+                $('#email').css('border-color', '');
+            }
+
+            // Check if phone is empty
+            if ($('#phone').val().trim() === '') {
+                isValid = false;
+                $('#phone-error').text('رقم الهاتف مطلوب.');
+                $('#phone').css('border-color', 'red');
+            } else {
+                $('#phone').css('border-color', '');
+            }
+
+            // Check if message is empty
+            if ($('#message').val().trim() === '') {
+                isValid = false;
+                $('#message-error').text('الرسالة مطلوبة.');
+                $('#message').css('border-color', 'red');
+            } else {
+                $('#message').css('border-color', '');
+            }
+
+            return isValid;
+        }
+        function isValidEmail(email) {
+            // Simple email validation regex
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+            
         });
+        
      </script>
 </body>
 

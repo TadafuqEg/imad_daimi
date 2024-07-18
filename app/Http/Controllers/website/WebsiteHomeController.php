@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-use App\Models\Volunteer;
+use App\Models\ContactUs;
 use App\Models\Accident;
 use Illuminate\Validation\Rule;
 use Image;
@@ -27,6 +27,7 @@ class WebsiteHomeController extends ApiController
     }
 
     public function contact_us(Request $request){
+        ContactUs::create(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'message'=>$request->message,'phone'=>$request->phone]);
         return $this->sendResponse(null,'سوف نقوم بالرد عليكم فى أقرب وقت');
     }
 }
