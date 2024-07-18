@@ -42,7 +42,7 @@
         <div class="card" style="text-align:center;">
           
           <!-- /.card-header -->
-          <h1 id="hover-heading"style="font-size: 60px;margin-top:2%">Welcome in <b>K 2 HELP</b></h1>
+          <h1 id="hover-heading"style="font-size: 60px;margin-top:2%">Welcome in Dashboard</h1>
           <!-- /.card-body -->
         </div>
         <!-- /.card -->
