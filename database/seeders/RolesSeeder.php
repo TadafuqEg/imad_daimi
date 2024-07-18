@@ -18,9 +18,21 @@ class RolesSeeder extends Seeder
     public function run()
     {
        //create role "Employee" for users
+        $roles = [
+            'Client',
+            'Admin',
+            
+        // Add more roles as needed
+        ];
 
-        $client_role = Role::create(['name' => 'Client']);
-        $admin_role = Role::create(['name' => 'Admin']);
+        foreach ($roles as $role) {
+            $existed_role=Role::where('name' , $role)->first();
+            if(!$existed_role){
+                Role::create(['name' => $role]);
+            }
+        }
+        $admin_role = Role::where('name','Admin')->first();
+        
 
         $permissions = Permission::pluck('id', 'id')->all();
 
@@ -28,10 +40,10 @@ class RolesSeeder extends Seeder
         $user = User::create([
             'first_name' => 'Admin',
             'last_name' => 'Admin',
-            'email' => 'admin@tadafuq.com',
-            'username'=>'admin',
+            'email' => 'eldaimi@gmail.com',
+            'username'=>'eldaimi',
             'phone' => null,
-            'password' => Hash::make('password'),
+            'password' => Hash::make('gmadmin159!48@26#0'),
         ]);
 
         
