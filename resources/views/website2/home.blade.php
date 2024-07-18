@@ -281,6 +281,7 @@
                  success: function(response) {
                     // Handle the success response here
                     console.log(response);
+                    showPopup('Success! Form submitted successfully.');
                  },
                  error: function(xhr, status, error) {
                     // Handle the error response here
@@ -288,6 +289,16 @@
                  }
               });
            });
+           function showPopup(message) {
+                var popup = $('<div class="popup">' + message + '</div>'); // Create the popup element
+                $('body').append(popup); // Append the popup to the body
+
+                setTimeout(function() {
+                    popup.fadeOut('slow', function() {
+                    $(this).remove(); // Remove the popup after 3 seconds
+                    });
+                }, 3000); // Set the duration for the popup to disappear (in milliseconds)
+            }
         });
      </script>
 </body>
