@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\website\AuthController;
-use App\Http\Controllers\website\UserController;
-use App\Http\Controllers\website\LocationController;
-use App\Http\Controllers\website\HomeController;
-use App\Http\Controllers\website\CommunityController;
-use App\Http\Controllers\website\SettingController;
+use App\Http\Controllers\dashboard\AuthController;
+use App\Http\Controllers\dashboard\UserController;
+use App\Http\Controllers\dashboard\LocationController;
+use App\Http\Controllers\dashboard\HomeController;
+use App\Http\Controllers\dashboard\CommunityController;
+use App\Http\Controllers\dashboard\SettingController;
+use App\Http\Controllers\website\WebsiteHomeController;
 /*
 /*
 |--------------------------------------------------------------------------
@@ -18,18 +19,21 @@ use App\Http\Controllers\website\SettingController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
+Route::get('/', [WebsiteHomeController::class, 'home'])->name('website-home');
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////dashboard//////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+Route::get('/admin-dashboard', function () {
     
     if(!auth()->user()){
-        return redirect('/login');
+        return redirect('/admin-dashboard/login');
     }else{
-        return redirect('/home');
+        return redirect('/admin-dashboard/home');
     }
 });
-Route::get('/login', [AuthController::class, 'login_view'])->name('login.view');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::group(['middleware' => ['admin']], function () {
+Route::get('/admin-dashboard/login', [AuthController::class, 'login_view'])->name('login.view');
+Route::post('/admin-dashboard/login', [AuthController::class, 'login'])->name('login');
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin-dashboard'], function () {
     Route::get('/home', [AuthController::class, 'home'])->name('home');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     /////////////////////////////////////////
