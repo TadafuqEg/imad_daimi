@@ -63,7 +63,7 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-            <img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" />
+            <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" /></a>
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
@@ -99,7 +99,8 @@
     <!-- main-content -->
     <div class="content content-ar">
         <div class="sec-1">
-            <img loading="lazy" src="{{asset('website/assets/imgs/img1.png')}}" />
+            <img class="desktop" loading="lazy" src="{{asset('website/assets/imgs/img1.png')}}" />
+            <img class="mobile" loading="lazy" src="{{asset('website/assets/imgs/img9.PNG')}}" />
             <div class="sec1-content">
 
                 <h5>مرحباً بكم في الموقع الرسمي

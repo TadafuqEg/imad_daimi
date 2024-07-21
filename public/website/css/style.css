@@ -619,7 +619,7 @@ option {
     top: 35%;
 }
 
-.sec-1 img {
+.sec-1 .desktop{
     position: absolute;
     top: 100px;
     width: 100%;
@@ -810,7 +810,7 @@ option {
 
 .card {
     width: calc(100% / 3);
-    height: 300px;
+    height: 320px;
     padding: 25px 15px 0 0;
     color: #121212;
     background: #fff;
@@ -1001,6 +1001,11 @@ option {
     transform: scale(1.1);
     transition: all .3s ease-in-out;
 }
+
+
+.mobile{
+    display: none;
+}
 /* media query */
 @media(max-width:1400px) {
 
@@ -1013,7 +1018,7 @@ option {
         font-size: 15px;
     }
     .card {
-        height: 320px;
+        height: 350px;
         padding: 25px 15px 0 0;
     }
     .card p{
@@ -1055,7 +1060,7 @@ option {
         font-size: 28px;
     }
     .card {
-        height: 300px;
+        height: 350px;
         padding: 15px 15px 0 0;
     }
     .card p{
@@ -1113,7 +1118,7 @@ option {
         font-size: 26px;
     }
     .card {
-        height: 350px;
+        height: 400px;
         padding: 15px 15px 0 0;
     }
     .card p{
@@ -1126,7 +1131,6 @@ option {
 }
 
 @media(max-width:990px) {
-
     /* nav */
     .navbar {
         position: relative;
@@ -1247,7 +1251,7 @@ option {
         margin-bottom: 5px;
     }
     .card {
-        height: 274px;
+        height: 320px;
         padding: 15px 15px 0 0;
     }
     .card p {
@@ -1328,6 +1332,20 @@ option {
 }
 
 @media(max-width:767px) {
+    .desktop{
+        display: none;
+    }
+    .sec-1{
+        height: 600px;
+    }
+    .mobile{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 600px;
+        top: 0;
+        left: 0;
+    }
     /* Ar */
     nav {
         height: 75px !important;
@@ -1375,18 +1393,19 @@ option {
     }
 
     .sec1-content h5 {
-        font-size: 29px;
+        font-size: 25px;
+        width: 90%;
     }
 
     .sec1-content {
         width: 80%;
         left: 20px;
-        top: 40%;
+        top:45%;
     }
 
     .sec1-content a button {
         width: 85%;
-        height: 55px;
+        height: 42px;
         margin-top: 25px;
         font-size: 22px;
         font-weight: 500;
@@ -1486,7 +1505,7 @@ option {
     }
     .card{
         width: 100%;
-        height: 230px;
+        height: 280px;
     }
     .card p{
         font-size: 14px;
