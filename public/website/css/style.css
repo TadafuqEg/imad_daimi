@@ -621,7 +621,7 @@ option {
 .sec-1 img{
     position: absolute;
     top: 100px;
-    width: 100%;
+    min-width: 100%;
     height: 90%;
     left: 0px;
     right: 0px;
