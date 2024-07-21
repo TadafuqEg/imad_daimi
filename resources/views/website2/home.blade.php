@@ -68,10 +68,13 @@
             <img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" />
         </div>
         <div class="nav-items">
-            <li class="active"><a href="#">الرئيسية</a></li>
-            <li><a href="">الأخبار</a></li>
-            <li><a href="">البرامج</a></li>
-            <li><a href="">التواصل</a></li>
+            <div class="nav-items">
+                <li class="active"><a href="#">الرئيسية</a></li>
+                <li><a href="#short">نبذه عن المرشح</a></li>
+                <li><a href="#news">المقال</a></li>
+                <li><a href="#contact">التواصل</a></li>
+    
+            </div>
 
         </div>
         <div class="search-icon">
