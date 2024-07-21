@@ -34,13 +34,13 @@
                 <div class="jsgrid-grid-header jsgrid-header-scrollbar">
                   <table class="jsgrid-table">
                     <tr class="jsgrid-header-row">
-                      <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 17.5%;">First Name</th>
-                      <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 17.5%;">Last Name</th>
+                      <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 15%;">First Name</th>
+                      <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 15%;">Last Name</th>
                       <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 17.5%;">Email</th>
                       <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 17.5%;">Phone Number</th>
                       <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 30%;">Message</th>
                      
-                      
+                      <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 5%;">Action</th>
 
                     </tr>
                   </table>
@@ -61,6 +61,18 @@
                                @else
                                {{$contact_us1->message}}
                                @endif</td>
+                            <td class="jsgrid-cell jsgrid-align-center" style="width: 25%;">
+                          
+                          
+                          
+                              <a href="" style="margin-right: 1rem;">
+                                <span  class="bi bi-eye" style="font-size: 1rem; color: rgb(0,255,0);"></span>
+                              </a>
+                              
+                             
+                            
+                            
+                          </td>
                           </tr>
                         @endforeach
                       @else
