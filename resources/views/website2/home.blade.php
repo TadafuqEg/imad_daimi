@@ -49,8 +49,9 @@
         }
         .error-message {
             color: red;
-            font-size: 12px;
-            display: none; /* Hide error messages by default */
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
         }
     </style>
 </head>
