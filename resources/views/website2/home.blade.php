@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>كريــــم-غــــربي</title>
-    
+    <title>عماد الدائمى</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('website/assets/imgs/logo.png')}}" style="transform: scale(1.2);">
     <link href="{{asset('website/css/style.css')}}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -105,12 +105,12 @@
 
                 <h5>مرحباً بكم في الموقع الرسمي
                     للمهـــندس عمــاد الدائمـــي المرشــــح الرئاســــي</h5>
-                <a class="btn-1" href=""><button>نبــذه عن المرشح</button></a>
-                <a class="btn-2" href=""><button>التواصـــل</button></a>
+                    <a class="btn-1" href="#short"><button>نبــذه عن المرشح</button></a>
+                    <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
             </div>
 
         </div>
-        <div class="sec-2 short">
+        <div class="sec-2 short" id="short">
             <h5>نبــذه عـن المرشـــح</h5>
             <img loading="lazy" src="{{asset('website/assets/imgs/img2.png')}}" />
             <p>المهندس عماد الدايمي، من مواليد سنة 1970 بمدينة مدنين في الجنوب التونسي.<br />
@@ -120,7 +120,7 @@
         <div class="sec-3">
             <h5>العمــــل</h5>
             <div class="flexx">
-                <div class="flexx-right">
+                <div class="flexx-right plus">
                     <ul>
                         <li>تولى مسؤولية الوزير مدير الديوان الرئاسي من ديسمبر 2011 الى افريل 2013.</li>
                         <li>شغل خطة الأمين العام لحزب المؤتمر من أجل الجمهورية (2013-2016)</li>
@@ -152,7 +152,7 @@
 
             </div>
         </div>
-        <div class="sec-4">
+        <div class="sec-4" id="news">
             <h5>المقــــال</h5>
             <div class="flexx-3">
                 <img loading="lazy" src="{{asset('website/assets/imgs/img6.png')}}" />
@@ -201,7 +201,7 @@
                 والإدارة والمعلوماتية وتمكن المرصد في وقت وجيز من تحقيق إنجازات كبرى في مجال مكافحة الفساد والمحافظة على
                 المال العمومي.</p>
         </div>
-        <div class="sec-6 contact">
+        <div class="sec-6 contact" id="contact">
             <div class="sec6-content">
                 <div class="form">
                     <form id="contact-form-container">
