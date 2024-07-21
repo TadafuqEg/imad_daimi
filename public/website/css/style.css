@@ -623,6 +623,8 @@ option {
     top: 100px;
     width: 100%;
     height: 90%;
+    left: 0px;
+    right: 0px;
 }
 
 .sec1-content h5 {
