@@ -67,9 +67,9 @@
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
-            <li><a href="#short">نبذه عن المرشح</a></li>
-            <li><a href="#news">المقال</a></li>
-            <li><a href="#contact">التواصل</a></li>
+            <li><a class="n-item-2" href="#short">نبذه عن المرشح</a></li>
+            <li><a class="n-item-3" href="#news">المقال</a></li>
+            <li><a class="n-item-4" href="#contact">التواصل</a></li>
 
         </div>
         <div class="search-icon">

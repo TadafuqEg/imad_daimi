@@ -27,7 +27,7 @@ Route::get('/about',[BaseGetController::class,'about'])->name('about');
 Route::get('/FAQs',[BaseGetController::class,'FAQs'])->name('FAQs');
 Route::post('/regist_volunteer',[AuthController::class,'regist_volunteer'])->name('regist_volunteer');
 Route::post('/create_help',[AccidentController::class,'create_accident'])->name('create_help');
-
+Route::post('/contact_us',[AuthController::class,'contact_us'])->name('contact_us');
 Route::post('/register',[AuthController::class,'register'])->name('register');
 Route::post('/login',[AuthController::class,'login'])->name('login');
 Route::get('/posts',[CommunityController::class,'posts'])->name('posts');

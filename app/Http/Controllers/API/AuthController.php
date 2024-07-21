@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 use App\Models\Recommendation;
 use App\Models\Volunteer;
 use App\Models\Setting;
+use App\Models\ContactUs;
 class AuthController extends ApiController
 {
 ///////////////////////////////////////////  Register  ///////////////////////////////////////////
@@ -172,5 +173,10 @@ class AuthController extends ApiController
         $message=Setting::where('key','recommendation_message')->where('category','general')->where('type','textarea')->first()->value;
         //$message= 'Respected mr ' .'('. $request->first_name . ' ' . $request->last_name .') '. $message;
         return $this->sendResponse(null,$message);
+    }
+
+    public function contact_us(Request $request){
+        ContactUs::create(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'message'=>$request->message,'phone'=>$request->phone]);
+        return $this->sendResponse(null,'سوف نقوم بالرد عليكم فى أقرب وقت');
     }
 }
