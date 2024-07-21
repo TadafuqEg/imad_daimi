@@ -284,7 +284,7 @@
     <script src="{{asset('website/js/stylish-portfolio.min.js')}}"></script>
 
 
-    <script>
+    <!--<script>
         // script.js
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -318,7 +318,7 @@
             });
         });
 
-    </script>
+    </script>-->
      <script>
         $(document).ready(function() {
            $('#contact-form-container').on('submit', function(event) {
