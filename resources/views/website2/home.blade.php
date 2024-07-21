@@ -80,7 +80,7 @@
         <div class="cancel-icon">
             <span class="fas fa-times"></span>
         </div>
-
+<!--
         <div class="custom-select-wrapper custom-select-wrapper-ar">
             <div class="custom-select">
                 <div class="custom-select-trigger">
@@ -89,12 +89,13 @@
                     <span class="flexxx">Ar <img loading="lazy" src="{{asset('website/assets/imgs/Mask.png')}}" /></span>
                 </div>
                 <div class="custom-options">
-                    <!-- <span class="custom-option" data-value="en">En <img loading="lazy" src="./assets/imgs/Mask.png" /></span> -->
+                     <span class="custom-option" data-value="en">En <img loading="lazy" src="./assets/imgs/Mask.png" /></span> 
                     <span class="custom-option" data-value="ar">Ar <img loading="lazy"
                             src="{{asset('website/assets/imgs/Mask.png')}}" /></span>
                 </div>
             </div>
         </div>
+    -->
     </nav>
 
     <!-- main-content -->
