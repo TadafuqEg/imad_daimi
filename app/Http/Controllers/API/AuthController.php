@@ -176,6 +176,20 @@ class AuthController extends ApiController
     }
 
     public function contact_us(Request $request){
+        $validator  =   Validator::make($request->all(), [
+            'first_name' => ['required', 'string', 'max:191'],
+            'last_name' => ['required', 'string', 'max:191'],
+            
+            'phone' => ['required'],
+            'email' =>['required','email'],
+            
+            'message'=>['required']
+        ]);
+        // dd($request->all());
+        if ($validator->fails()) {
+
+            return $this->sendError(null,$validator->errors());
+        }
         ContactUs::create(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'message'=>$request->message,'phone'=>$request->phone]);
         return $this->sendResponse(null,'سوف نقوم بالرد عليكم فى أقرب وقت');
     }
