@@ -52,8 +52,8 @@
                       @if(!empty($contact_us) && $contact_us->count())
                         @foreach($contact_us as $contact_us1)
                           <tr class="jsgrid-row">
-                            <td class="jsgrid-cell jsgrid-align-center" style="width: 17.5%;">{{$contact_us1->first_name}}</td>
-                            <td class="jsgrid-cell jsgrid-align-center" style="width: 17.5%;">{{$contact_us1->last_name}}</td>
+                            <td class="jsgrid-cell jsgrid-align-center" style="width: 15%;">{{$contact_us1->first_name}}</td>
+                            <td class="jsgrid-cell jsgrid-align-center" style="width: 15%;">{{$contact_us1->last_name}}</td>
                             <td class="jsgrid-cell jsgrid-align-center" style="width: 17.5%;">{{$contact_us1->email}}</td>
                             <td class="jsgrid-cell jsgrid-align-center" style="width: 17.5%;">{{$contact_us1->phone}}</td>
                             <td class="jsgrid-cell jsgrid-align-center" style="width: 30%;">@if(strlen($contact_us1->message)>50)
@@ -61,7 +61,7 @@
                                @else
                                {{$contact_us1->message}}
                                @endif</td>
-                            <td class="jsgrid-cell jsgrid-align-center" style="width: 25%;">
+                            <td class="jsgrid-cell jsgrid-align-center" style="width: 5%;">
                           
                           
                           
