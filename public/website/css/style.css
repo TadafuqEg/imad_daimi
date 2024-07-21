@@ -618,7 +618,7 @@ option {
     top: 35%;
 }
 
-.sec-1 img{
+.sec-1 .aaa{
     position: absolute;
     top: 100px;
     min-width: 100%;

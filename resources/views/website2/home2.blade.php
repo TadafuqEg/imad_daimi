@@ -99,7 +99,7 @@
     <div class="content content-ar">
         <div class="sec-1">
             
-            <img loading="lazy" alt="Responsive Image" id="responsive-image" class="" src="{{asset('website/assets/imgs/img1.png')}}" />
+            <img loading="lazy" alt="Responsive Image" id="responsive-image" class="aaa" src="{{asset('website/assets/imgs/img1.png')}}" />
             
             <div class="sec1-content">
 
