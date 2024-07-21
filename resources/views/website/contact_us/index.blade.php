@@ -23,7 +23,7 @@
               <div class="d-flex align-items-center">
 
                 
-                <a href="{{url('/admin-dashboard/contact_us?export=excel')}}" class="btn btn-primary">Export<i class="bi bi-plus"></i> </a>
+                <a href="{{url('/admin-dashboard/contact_us?export=excel')}}" class="btn btn-primary">Export  <i class="bi bi-download"></i> </a>
                 
               </div>
             </div>
