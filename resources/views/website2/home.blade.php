@@ -35,7 +35,7 @@
         .popup-content {
             background-color: white;
             margin: 10% auto;
-            padding: 20px;
+            
             border: 1px solid #888888;
             width: 30%;
             font-weight: bolder;
