@@ -451,9 +451,9 @@
     <script>
         function changeImageSrc() {
             const image = document.getElementById('responsive-image');
-            const mobileImageSrc = "{{asset('website/assets/imgs/img9.PNG')}}";
+            
             if (window.innerWidth <= 768) {
-                image.src = mobileImageSrc;
+                image.src = "{{asset('website/assets/imgs/img9.PNG')}}";
             } else {
                 image.src = "{{asset('website/assets/imgs/img1.png')}}";
             }
