@@ -624,6 +624,7 @@ option {
     top: 100px;
     width: 100%;
     height: 90%;
+    display: block;
 }
 
 .sec1-content h5 {
