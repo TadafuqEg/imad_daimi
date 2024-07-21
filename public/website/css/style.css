@@ -1333,13 +1333,13 @@ option {
 
 @media(max-width:767px) {
     .desktop{
-        display: none;
+        display: none !important;
     }
     .sec-1{
         height: 600px;
     }
     .mobile{
-        display: block;
+        display: block !important;
         position: absolute;
         width: 100%;
         height: 520px;
