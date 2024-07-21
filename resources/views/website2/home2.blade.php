@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>عماد الدائمى</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('website/assets/imgs/logo.png')}}" style="transform: scale(1.2);">
+    <title>عماد الدايمى</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('website/assets/imgs/logo2.png')}}" style="transform: scale(1.2);">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}" />
@@ -63,7 +63,7 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-           <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" /></a>
+           <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo2.png')}}" /></a>
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
@@ -104,7 +104,7 @@
             <div class="sec1-content">
 
                 <h5>مرحباً بكم في الموقع الرسمي
-                    للمهـــندس عمــاد الدائمـــي المرشــــح الرئاســــي</h5>
+                    للمهـــندس عمــاد الدايمـــي المرشــــح الرئاســــي</h5>
                 <a class="btn-1" href="#short"><button>نبــذه عن المرشح</button></a>
                 <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
             </div>
@@ -198,7 +198,7 @@
                     الاقتصادي والمالي المتخصص في ملفات الفساد، وأدى عمله الى إيقافات في صفوف مسؤولين إداريين تورطوا في
                     ملفات متفاوتة الخطور</p>
             </div>
-            <p>عند انتهاء عهدته النيابية سنة 2019 خيّر عماد الدائمي عدم الترشح للانتخابات التشريعية والتفرغ لمكافحة
+            <p>عند انتهاء عهدته النيابية سنة 2019 خيّر عماد الدايمي عدم الترشح للانتخابات التشريعية والتفرغ لمكافحة
                 الفساد من خلال إنشائه لمرصد رقابة صحبة مجموعة من الإطارات العليا في الدولة وخبراء في المحاسبة والقانون
                 والإدارة والمعلوماتية وتمكن المرصد في وقت وجيز من تحقيق إنجازات كبرى في مجال مكافحة الفساد والمحافظة على
                 المال العمومي.</p>
@@ -261,7 +261,7 @@
     </div>
     <div class="footer">
         <div class="footer-top">
-            <img loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" />
+            <img loading="lazy" src="{{asset('website/assets/imgs/logo2.png')}}" />
             <div class="links">
                 <a href="">اتصل بنا</a>
                 <a href="">خريطة الموقع</a>
