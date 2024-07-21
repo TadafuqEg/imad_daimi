@@ -13,13 +13,15 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\FAQ;
+use App\Models\ContactUs;
 use App\Models\Volunteer;
 use App\Models\Accident;
 use Illuminate\Validation\Rule;
 use Image;
 use Str;
 use File;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ContactUsExport;
 class HomeController extends ApiController
 {
     public function help_requests(Request $request){
@@ -138,5 +140,18 @@ class HomeController extends ApiController
     public function delete_FAQ($id){
         FAQ::where('id', $id)->delete();
         return redirect('/admin-dashboard/FAQs');
+    }
+    ////////////////////////////////////////////////////////////////
+    public function contact_us(Request $request){
+        if($request->export=='excel'){
+            $invitation_code = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_'), 0, 12);
+            return Excel::download(new ContactUsExport, auth()->user()->id . $invitation_code . 'contact_us.xlsx');
+            //$contact_us=ContactUs::all();
+
+        }else{
+            $contact_us=ContactUs::all();
+        }
+        
+        return view('website.contact_us.index',compact('contact_us'));
     }
 }

@@ -96,4 +96,6 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin-dashboard'], functio
     Route::get('/settings',[SettingController::class,'index'])->name('settings');
     Route::get('/setting/edit/{id}', [SettingController::class, 'edit_setting'])->name('edit.setting');
     Route::post('/setting/update/{id}', [SettingController::class, 'update_setting'])->name('update.setting');
+    /////////////////////////////////////////////////
+    Route::get('/contact_us',[HomeController::class,'contact_us'])->name('contact_us');
 });

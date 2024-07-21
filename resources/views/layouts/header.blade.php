@@ -165,7 +165,7 @@
                 <a href="{{url('/admin-dashboard/users')}}" class="d-block">Users</a>
             </div>
         </div>
-       
+       <!--
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="{{ asset('logos/state.png') }}" class="img-circle elevation-2" alt="User Image"
@@ -196,6 +196,7 @@
                 <a href="{{url('/admin-dashboard/streets')}}" class="d-block">Streets</a>
             </div>
         </div>
+        -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="{{ asset('logos/help.png') }}" class="img-circle elevation-2" alt="User Image"
@@ -246,6 +247,16 @@
             </div>
             <div class="info">
                 <a href="{{url('/admin-dashboard/community')}}" class="d-block">Community</a>
+            </div>
+        </div>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ asset('logos/contact_us.png') }}" class="img-circle elevation-2" alt="Contact Us"
+                    style="height: 2rem;
+                width: 2rem;">
+            </div>
+            <div class="info">
+                <a href="{{url('/admin-dashboard/contact_us')}}" class="d-block">Contact Us</a>
             </div>
         </div>
         
