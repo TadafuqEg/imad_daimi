@@ -35,7 +35,7 @@
         .popup-content {
             background-color: white;
             margin: 10% auto;
-            
+            padding: 1%;
             border: 1px solid #888888;
             width: 30%;
             font-weight: bolder;
@@ -46,6 +46,11 @@
         }
         .show {
             display: block;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none; /* Hide error messages by default */
         }
     </style>
 </head>
