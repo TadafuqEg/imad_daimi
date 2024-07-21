@@ -98,8 +98,8 @@
     <!-- main-content -->
     <div class="content content-ar">
         <div class="sec-1">
-            <img loading="lazy" class="mobile" src="{{asset('website/assets/imgs/img9.PNG')}}" />
-            <img loading="lazy" class="desktop" src="{{asset('website/assets/imgs/img1.png')}}" />
+            
+            <img loading="lazy" alt="Responsive Image" id="responsive-image" class="desktop" src="{{asset('website/assets/imgs/img1.png')}}" />
             
             <div class="sec1-content">
 
@@ -448,6 +448,42 @@
         });
         
     </script>
+    <script>
+        function changeImageSrc() {
+            const image = document.getElementById('responsive-image');
+            const mobileImageSrc = "{{asset('website/assets/imgs/img9.PNG')}}";
+            if (window.innerWidth <= 768) {
+                image.src = mobileImageSrc;
+            } else {
+                image.src = "{{asset('website/assets/imgs/img1.png')}}";
+            }
+        }
+        window.addEventListener('resize', changeImageSrc);
+        window.addEventListener('load', changeImageSrc);
+        </script>
+    {{-- <script>
+        $(document).ready(function() {
+            function updateImage() {
+                var imgElement = $('#dynamic-image');
+    
+                // Change the image source based on a specific condition
+                // Example: Change the image if window width is less than 768px
+                if ($(window).width() < 768) {
+                    imgElement.attr('src', '{{asset('website/assets/imgs/img2.png')}}');
+                } else {
+                    imgElement.attr('src', '{{asset('website/assets/imgs/img1.png')}}');
+                }
+            }
+    
+            // Run the function on page load
+            updateImage();
+    
+            // Run the function on window resize
+            $(window).resize(function() {
+                updateImage();
+            });
+        });
+    </script> --}}
 </body>
 
 </html>
