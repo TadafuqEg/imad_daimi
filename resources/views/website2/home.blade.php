@@ -282,57 +282,7 @@
     <script src="{{asset('website/js/index.js')}}"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="{{asset('website/js/stylish-portfolio.min.js')}}"></script>
-    <script>
-        const menuBtn = document.querySelector(".menu-icon span");
-        const searchBtn = document.querySelector(".search-icon");
-        const cancelBtn = document.querySelector(".cancel-icon");
-        const items = document.querySelector(".nav-items");
-        const item1 = document.querySelector(".n-item-2")
-        const item2 = document.querySelector(".n-item-3")
-        const item3 = document.querySelector(".n-item-4")
-        const form = document.querySelector("form");
-        menuBtn.onclick = () => {
-            items.classList.add("active");
-            menuBtn.classList.add("hide");
-            searchBtn.classList.add("hide");
-            cancelBtn.classList.add("show");
-        }
-        cancelBtn.onclick = () => {
-            items.classList.remove("active");
-            menuBtn.classList.remove("hide");
-            searchBtn.classList.remove("hide");
-            cancelBtn.classList.remove("show");
-            form.classList.remove("active");
-            cancelBtn.style.color = "#E70013";
-        }
-        item1.onclick = () => {
-            items.classList.remove("active");
-            menuBtn.classList.remove("hide");
-            searchBtn.classList.remove("hide");
-            cancelBtn.classList.remove("show");
-            form.classList.remove("active");
-            cancelBtn.style.color = "#E70013";
-            console.log("test")
-        }
-        item2.onclick = () => {
-            items.classList.remove("active");
-            menuBtn.classList.remove("hide");
-            searchBtn.classList.remove("hide");
-            cancelBtn.classList.remove("show");
-            form.classList.remove("active");
-            cancelBtn.style.color = "#E70013";
-            console.log("test")
-        }
-        item3.onclick = () => {
-            items.classList.remove("active");
-            menuBtn.classList.remove("hide");
-            searchBtn.classList.remove("hide");
-            cancelBtn.classList.remove("show");
-            form.classList.remove("active");
-            cancelBtn.style.color = "#E70013";
-            console.log("test")
-        }
-    </script>
+
 
     <script>
         // script.js
