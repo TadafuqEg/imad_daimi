@@ -6,55 +6,15 @@
     <meta charset="utf-8">
     <title>عماد الدائمى</title>
     <link rel="icon" type="image/x-icon" href="{{asset('website/assets/imgs/logo.png')}}" style="transform: scale(1.2);">
-    <link href="{{asset('website/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('website/css/style.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <style>
-        .popup {
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(
-                0,
-                0,
-                0,
-                0.4
-            );
-            display: none;
-        }
-        .popup-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888888;
-            width: 30%;
-            font-weight: bolder;
-        }
-        .popup-content button {
-            display: block;
-            margin: 0 auto;
-        }
-        .show {
-            display: block;
-        }
-    
-        .error-message {
-            color: red;
-            font-size: 0.9em;
-            display: block;
-            margin-top: 5px;
-        }
-    </style>
 </head>
 
 <body>
@@ -64,17 +24,13 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-            
             <img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" />
         </div>
         <div class="nav-items">
-            <div class="nav-items">
-                <li class="active"><a href="#">الرئيسية</a></li>
-                <li><a href="#short">نبذه عن المرشح</a></li>
-                <li><a href="#news">المقال</a></li>
-                <li><a href="#contact">التواصل</a></li>
-    
-            </div>
+            <li class="active"><a href="#">الرئيسية</a></li>
+            <li><a href="#short">نبذه عن المرشح</a></li>
+            <li><a href="#news">المقال</a></li>
+            <li><a href="#contact">التواصل</a></li>
 
         </div>
         <div class="search-icon">
@@ -83,7 +39,7 @@
         <div class="cancel-icon">
             <span class="fas fa-times"></span>
         </div>
-<!--
+        <!--
         <div class="custom-select-wrapper custom-select-wrapper-ar">
             <div class="custom-select">
                 <div class="custom-select-trigger">
@@ -98,7 +54,7 @@
                 </div>
             </div>
         </div>
-    -->
+         -->
     </nav>
 
     <!-- main-content -->
@@ -109,11 +65,12 @@
 
                 <h5>مرحباً بكم في الموقع الرسمي
                     للمهـــندس عمــاد الدائمـــي المرشــــح الرئاســــي</h5>
-                    <a class="btn-1" href="#short"><button>نبــذه عن المرشح</button></a>
-                    <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
+                <a class="btn-1" href="#short"><button>نبــذه عن المرشح</button></a>
+                <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
             </div>
 
         </div>
+
         <div class="sec-2 short" id="short">
             <h5>نبــذه عـن المرشـــح</h5>
             <img loading="lazy" src="{{asset('website/assets/imgs/img2.png')}}" />
@@ -121,6 +78,7 @@
                 رئيس مؤسس لجمعية "مرصد رقابة</p>
             <p>عضو مجلس نواب الشعب للدورة النيابية 2014-2019 عن دائرة مدنين.</p>
         </div>
+
         <div class="sec-3">
             <h5>العمــــل</h5>
             <div class="flexx">
@@ -306,9 +264,9 @@
                     customSelect.classList.remove('open');
 
                     // Redirect based on selected value
-                    // if (value === 'en') {
-                    //     window.location.href = '../index.html'; // Replace with actual URL
-                    // }
+                    if (value === 'en') {
+                       // window.location.href = '../index.html'; // Replace with actual URL
+                    }
                 });
             });
 
@@ -321,7 +279,7 @@
         });
 
     </script>
-    <script>
+     <script>
         $(document).ready(function() {
            $('#contact-form-container').on('submit', function(event) {
               event.preventDefault(); // Prevent default form submission
@@ -449,7 +407,7 @@
             
         });
         
-     </script>
+    </script>
 </body>
 
 </html>
