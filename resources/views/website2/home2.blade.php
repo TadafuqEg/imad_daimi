@@ -63,7 +63,7 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-           <a href="#"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" /></a>
+           <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo.png')}}" /></a>
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
