@@ -364,24 +364,24 @@
               });
            });
 
-           closePopup.addEventListener(
-                "click",
-                function () {
-                    myPopup.classList.remove(
-                        "show"
-                    );
-                }
-            );
-            window.addEventListener(
-                "click",
-                function (event) {
-                    if (event.target == myPopup) {
-                        myPopup.classList.remove(
-                            "show"
-                        );
-                    }
-                }
-            );
+        //    closePopup.addEventListener(
+        //         "click",
+        //         function () {
+        //             myPopup.classList.remove(
+        //                 "show"
+        //             );
+        //         }
+        //     );
+        //     window.addEventListener(
+        //         "click",
+        //         function (event) {
+        //             if (event.target == myPopup) {
+        //                 myPopup.classList.remove(
+        //                     "show"
+        //                 );
+        //             }
+        //         }
+        //     );
             // Append the popup to the body
 
             // Set the duration for the popup to disappear (in milliseconds)
