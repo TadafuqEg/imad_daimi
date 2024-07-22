@@ -48,7 +48,7 @@ class AuthController extends ApiController
             do {
                 $username=$request->username . substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_'),0,3);
             } while (User::where('username', $username)->exists());
-            return $this->sendError($username,'Username already existed');
+            return $this->sendError($username,'اسم المستخدم موجود بالفعل');
         }
         
         
@@ -69,7 +69,7 @@ class AuthController extends ApiController
         $user->assignRole([$role->id]);
         $user->token=$user->createToken('api')->plainTextToken;
         $user->picture=getFirstMediaUrl($user,$user->avatarCollection);
-        return $this->sendResponse($user,'Account created succesfuly');
+        return $this->sendResponse($user,'تم إنشاء الحساب بنجاح');
 
     }
 

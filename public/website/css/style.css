@@ -609,6 +609,7 @@ option {
     background-size: cover;
     background-position: center; */
     position: relative;
+    overflow: hidden;
 }
 
 .sec1-content {
