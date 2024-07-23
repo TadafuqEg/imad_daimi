@@ -21,12 +21,12 @@ class Admin
         if (!Auth::check()) {
 
 
-            return redirect('/login');
+            return redirect('admin-dashboard/login');
 
         }
         if(count(auth()->user()->roles)==0)
         {
-            return redirect('/login');
+            return redirect('admin-dashboard/login');
         }
         if(!is_null(auth()->user()->roles))
         {
@@ -34,7 +34,7 @@ class Admin
             {   
                  Auth::logout();
 
-                return redirect('/login')->withErrors(['msg' => 'Please verify that your information is correct']);
+                return redirect('admin-dashboard/login')->withErrors(['msg' => 'Please verify that your information is correct']);
             }
         }
 
