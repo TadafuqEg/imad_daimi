@@ -18,6 +18,7 @@ use App\Models\Volunteer;
 use App\Models\Accident;
 use Illuminate\Validation\Rule;
 use Image;
+use App\Models\Recommendation;
 use Str;
 use File;
 use Maatwebsite\Excel\Facades\Excel;
@@ -149,7 +150,7 @@ class HomeController extends ApiController
             //$contact_us=ContactUs::all();
 
         }else{
-            $contact_us=ContactUs::all();
+            $contact_us=ContactUs::orderBy('id','desc')->paginate(10);
         }
         
         return view('website.contact_us.index',compact('contact_us'));
@@ -161,5 +162,12 @@ class HomeController extends ApiController
        
         return view('website.contact_us.view',compact('question'));
 
+    }
+    //////////////////////////////////////////////////////////////////////////
+    public function recommendations(){
+        $recommendations=Recommendation::orderBy('id','desc')->paginate(10);
+    
+    
+        return view('website.recommendations.index',compact('recommendations'));
     }
 }

@@ -82,7 +82,7 @@
                       @endif
                     </tbody>
                   </table>
-                 
+                  {!! $contact_us->links("pagination::bootstrap-4") !!}
                 </div>
               </div>
   

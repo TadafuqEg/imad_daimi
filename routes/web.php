@@ -99,4 +99,5 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin-dashboard'], functio
     /////////////////////////////////////////////////
     Route::get('/contact_us',[HomeController::class,'contact_us'])->name('contact_us');
     Route::get('/contact_us/show/{id}', [HomeController::class, 'question'])->name('question');
+    Route::get('/recommendations',[HomeController::class,'recommendations'])->name('recommendations');
 });
