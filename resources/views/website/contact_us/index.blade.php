@@ -65,7 +65,7 @@
                           
                           
                           
-                              <a href="" style="margin-right: 1rem;">
+                              <a href="{{url('/admin-dashboard/contact_us/show/'.$contact_us1->id)}}" style="margin-right: 1rem;">
                                 <span  class="bi bi-eye" style="font-size: 1rem; color: rgb(0,0,255);"></span>
                               </a>
                               

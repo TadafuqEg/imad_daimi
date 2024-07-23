@@ -55,7 +55,7 @@ class AccidentController extends ApiController
             }
         }
         
-        return $this->sendResponse(null,'Help created successfuly');
+        return $this->sendResponse(null,'تم ارسال الإستغاثة بنجاح');
     }
 
  

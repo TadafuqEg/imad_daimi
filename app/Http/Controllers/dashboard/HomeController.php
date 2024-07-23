@@ -154,4 +154,12 @@ class HomeController extends ApiController
         
         return view('website.contact_us.index',compact('contact_us'));
     }
+
+    
+    public function question($id){
+        $question=ContactUs::where('id',$id)->first();
+       
+        return view('website.contact_us.view',compact('question'));
+
+    }
 }
