@@ -66,14 +66,14 @@
     <script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <!-- ChartJS -->
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
-    <script src="{{asset('plugins/jsgrid/demos/db.js')}}"></script>
-    <script src="{{asset('plugins/jsgrid/jsgrid.min.js')}}"></script>
+    <script src="{{ asset('plugins/jsgrid/demos/db.js') }}"></script>
+    <script src="{{ asset('plugins/jsgrid/jsgrid.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-    <script src="../../dist/js/adminlte.min.js"></script>
+    {{-- <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
+    <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(function () {

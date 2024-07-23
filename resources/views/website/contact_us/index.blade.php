@@ -93,3 +93,5 @@
         <!-- /.card -->
       </section>
   @endsection
+  @push('scripts')
+  @endpush
