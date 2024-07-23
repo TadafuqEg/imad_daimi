@@ -80,7 +80,14 @@
           bsCustomFileInput.init();
         });
     </script>
-
+    <script>
+        function goBack() {
+            history.go(-1);
+        }
+        function goNext() {
+            history.go(+1);
+        }
+  </script>
     @stack('scripts')
     
 </body>

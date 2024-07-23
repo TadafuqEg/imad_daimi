@@ -130,6 +130,16 @@
             </div>
         </li> --}}
         <li class="nav-item">
+            <a class="nav-link" onclick="goBack()"  role="button" title="Back">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="goNext()"  role="button" title="Next">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
