@@ -172,5 +172,4 @@ class CommunityController extends ApiController
         }
         return $this->sendResponse($replay,'Replay created successfuly');
     }
-    
 }
