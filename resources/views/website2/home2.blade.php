@@ -272,11 +272,11 @@
         <div class="footer-bottom">
             <p>حقوق الملكية © 2024</p>
             <div class="bottom-imgs">
-                <a href="https://www.youtube.com/channel/UCGuZ399peMn0MWzm5f6IsIw"><img loading="lazy" src="{{asset('website/assets/imgs/youtube.png')}}" /></a>
-                <a href="https://www.tiktok.com/@imeddaimi"><img loading="lazy" src="{{asset('website/assets/imgs/tiktok.png')}}" /></a>
-                <a href="https://www.instagram.com/imeddaimi?igsh=ZXUyOGtjdXV6dG1n"><img loading="lazy" src="{{asset('website/assets/imgs/instgram.png')}}" /></a>
-                <a href="https://x.com/imaddaimi?lang=en"><img loading="lazy" src="{{asset('website/assets/imgs/twitter.png')}}" /></a>
-                <a href="https://www.facebook.com/ImedDaimiOfficielle?mibextid=LQQJ4d"><img loading="lazy" src="{{asset('website/assets/imgs/facebook.png')}}" /></a>
+                <a target="_blank"  href="https://www.youtube.com/channel/UCGuZ399peMn0MWzm5f6IsIw"><img loading="lazy" src="{{asset('website/assets/imgs/youtube.png')}}" /></a>
+                <a target="_blank"  href="https://www.tiktok.com/@imeddaimi"><img loading="lazy" src="{{asset('website/assets/imgs/tiktok.png')}}" /></a>
+                <a target="_blank" href="https://www.instagram.com/imeddaimi?igsh=ZXUyOGtjdXV6dG1n"><img loading="lazy" src="{{asset('website/assets/imgs/instgram.png')}}" /></a>
+                <a target="_blank" href="https://x.com/imaddaimi?lang=en"><img loading="lazy" src="{{asset('website/assets/imgs/twitter.png')}}" /></a>
+                <a target="_blank" href="https://www.facebook.com/ImedDaimiOfficielle?mibextid=LQQJ4d"><img loading="lazy" src="{{asset('website/assets/imgs/facebook.png')}}" /></a>
             </div>
         </div>
     </div>
