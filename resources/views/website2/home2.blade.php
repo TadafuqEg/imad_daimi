@@ -99,7 +99,7 @@
     <div class="content content-ar">
         <div class="sec-1">
             
-            <img loading="lazy" alt="Responsive Image" id="responsive-image" class="aaa" src="{{asset('website/assets/imgs/img1.png')}}" />
+            <img loading="lazy" alt="Responsive Image" id="responsive-image" class="aaa" src="{{$img1}}" />
             
             <div class="sec1-content">
 
@@ -114,7 +114,7 @@
 
         <div class="sec-2 short" id="short">
             <h5>نبــذه عـن المرشـــح</h5>
-            <img loading="lazy" src="{{asset('website/assets/imgs/img2.png')}}" />
+            <img loading="lazy" src="{{$img3}}" />
             <p>المهندس عماد الدايمي، من مواليد سنة 1970 بمدينة مدنين في الجنوب التونسي.<br />
                 رئيس مؤسس لجمعية "مرصد رقابة</p>
             <p>عضو مجلس نواب الشعب للدورة النيابية 2014-2019 عن دائرة مدنين.</p>
@@ -135,8 +135,8 @@
                     </ul>
                 </div>
                 <div class="flexx-left">
-                    <img loading="lazy" alt="" class="img-1" src="{{asset('website/assets/imgs/img3.png')}}" />
-                    <img loading="lazy" alt="" class="img-2" src="{{asset('website/assets/imgs/img4.png')}}" />
+                    <img loading="lazy" alt="" class="img-1" src="{{$img4}}" />
+                    <img loading="lazy" alt="" class="img-2" src="{{$img5}}" />
                 </div>
 
             </div>
@@ -151,7 +151,7 @@
                     </ul>
                 </div>
                 <div class="secbottom-img">
-                    <img loading="lazy" alt="" class="sb-img" src="{{asset('website/assets/imgs/img5.png')}}" />
+                    <img loading="lazy" alt="" class="sb-img" src="{{$img6}}" />
                 </div>
 
             </div>
@@ -159,7 +159,7 @@
         <div class="sec-4" id="news">
             <h5>المقــــال</h5>
             <div class="flexx-3">
-                <img loading="lazy" src="{{asset('website/assets/imgs/img6.png')}}" />
+                <img loading="lazy" src="{{$img7}}" />
                 <ul class="scrollable-element">
                     <li>تولى مسؤولية الوزير مدير الديوان الرئاسي من ديسمبر 2011 الى افريل 2013.</li>
                     <li>شغل خطة الأمين العام لحزب المؤتمر من أجل الجمهورية (2013-2016)</li>
@@ -194,7 +194,7 @@
         </div>
         <div class="sec-5">
             <div class="sec5-top">
-                <img src="{{asset('website/assets/imgs/img7.png')}}" />
+                <img src="{{$img8}}" />
                 <p class="scrollable-element">عرف باطلاعه الكبير على هيكلية الوزارات والمؤسسات والمنشآت العمومية وتقاريرها المالية وتقارير الرقابة.
                     كما عرف بالعمل على ملفات الفساد الكبرى عبر آليات الرقابة البرلمانية وآليات النفاذ إلى المعلومة في
                     اطار عمله النيابي والمواطني في مكافحة الفساد في البلاد. كما تولى ايداع ملفات عديدة لدى القطب القضائي
