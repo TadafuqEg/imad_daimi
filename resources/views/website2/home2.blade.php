@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>عماد الدايمى</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('website/assets/imgs/logo2.png')}}" style="transform: scale(1.2);">
+    <link rel="icon" type="image/x-icon" href="{{ app('logo') }}" style="transform: scale(1.2);">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}" />
@@ -63,7 +63,7 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-           <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{asset('website/assets/imgs/logo2.png')}}" /></a>
+           <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{ app('logo') }}" /></a>
         </div>
         <div class="nav-items">
             <li class="active"><a href="#">الرئيسية</a></li>
@@ -264,7 +264,7 @@
     </div>
     <div class="footer">
         <div class="footer-top">
-            <img loading="lazy" src="{{asset('website/assets/imgs/logo2.png')}}" />
+            <img loading="lazy" src="{{ app('logo') }}" />
             <div class="links">
                 <a href="">اتصل بنا</a>
                 <a href="">خريطة الموقع</a>

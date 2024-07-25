@@ -49,13 +49,27 @@ class SettingController extends ApiController
         }
         if($setting->type=='file'&& array_key_exists('value',$request->all())){
             $invitation_code = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 12);
-            $image = $setting->id.'_'.$invitation_code.'_'.time() . '.' . $request->value->extension();
+            $imageFile = $request->file('value');
+            //
+            $mimeType = $imageFile->getMimeType();
+            $fileType = $this->getFileType($mimeType);
+          
+            if($fileType=='image'){
+                list($width, $height) = getimagesize($imageFile->getRealPath());
+                $image = $setting->id.'_'.$width . 'x' . $height.'_'.$invitation_code.'_'.time() . '.' . $request->value->extension();
+
+            }else{
+                $image = $setting->id.'_'.$invitation_code.'_'.time() . '.' . $request->value->extension();
+   
+            }
         
             $request->value->move(public_path('setting_images/'), $image);
             $path = ('/setting_images/') . $image;
             $input['label']=$request->label;
             $input['value']=$path;
-            
+            if($fileType=='image'){
+                $input['dimensions']=json_encode(["width"=>$width,"height"=>$height]);
+            }
             $setting->fill($input)->save();
         }else{
             $input['label']=$request->label;
@@ -64,5 +78,24 @@ class SettingController extends ApiController
         }
         return redirect('/admin-dashboard/settings');
 
+    }
+
+    protected function getFileType($mimeType)
+    {
+        $mimeTypes = [
+            'image' => ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
+            'pdf' => ['application/pdf'],
+            'video' => ['video/mp4', 'video/x-matroska', 'video/avi'],
+            'audio' => ['audio/mpeg', 'audio/wav'],
+            // Add more mappings as needed
+        ];
+    
+        foreach ($mimeTypes as $type => $types) {
+            if (in_array($mimeType, $types)) {
+                return $type;
+            }
+        }
+    
+        return 'unknown';
     }
 }
