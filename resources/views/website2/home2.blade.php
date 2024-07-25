@@ -107,7 +107,7 @@
                     للمهـــندس عمــاد الدايمـــي المرشــــح الرئاســــي</h5>
                 <a class="btn-1" href="#short"><button>نبــذه عن المرشح</button></a>
                 <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
-                <a class="btn-2" href="#contact"><button>التواصـــل</button></a>
+                
             </div>
 
         </div>
