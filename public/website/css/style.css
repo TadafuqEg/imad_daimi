@@ -228,16 +228,6 @@ nav .search-icon {
     color: #000;
     cursor: pointer;
 }
-
-.flexx,
-.flexx {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    margin-right: 5px;
-}
-
 .flexxx img {
     transform: scale(.9);
 }
@@ -441,6 +431,14 @@ nav .search-icon {
     align-items: center;
     justify-content: space-around;
     }
+    .sec-bottom .secbottom-img{
+        margin-bottom: 30px;
+    }
+    .sec-bottom .secbottom-img img {
+        width: 100%;
+        height: 380px;
+    }
+   
 }
 
 .space {
@@ -463,6 +461,7 @@ nav .logo.space {
     nav form {
         right: 30px;
     }
+    
 }
 
 @media (max-width: 350px) {
@@ -660,7 +659,7 @@ option {
 
 .sec-2 {
     width: 100%;
-    padding: 80px;
+    padding: 80px 80px 40px 80px;
 }
 
 .sec-2 h5 {
@@ -690,7 +689,8 @@ option {
 
 .sec-3 {
     width: 100%;
-    padding: 80px;
+    padding:40px 80px;
+    height: auto;
 }
 
 .sec-3 h5 {
@@ -703,16 +703,25 @@ option {
     color: #fff;
     margin: 0 0 40px 0;
 }
+.flexx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-right: 5px;
+    height:560px;
+}
 
 .sec-3 .flexx-right {
     width: 70%;
-    height: auto;
-    margin-bottom: 100px;
+    height: 100%;
 }
 
 .sec-3 .flexx-right ul {
     padding: 30px;
     width: 75%;
+    height: 80%;
+    overflow: auto;
 }
 
 .sec-3 .flexx-right ul li {
@@ -736,13 +745,14 @@ option {
 
 .sec-3 .flexx-left {
     width: 30%;
-    height: 380px;
+    height: 100%;
     position: relative;
 }
 
 .sec-3 .flexx-left img {
     position: absolute;
     width: 60%;
+    height: 60%;
 }
 
 .flexx-2 .flexx-right {
@@ -760,10 +770,36 @@ option {
     left: 0;
     top: 0px;
 }
+.sec-bottom{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.sec-bottom .flexx-right{
+    width: 70% !important;
+
+}
+.sec-bottom .flexx-right ul{
+    height: 350px !important;
+    height: auto;
+}
+
+.sec-bottom .secbottom-img{
+    width: 30%;
+}
+.sec-bottom .secbottom-img img{
+    width: 100%;
+}
+
+/* end sec -3 */
 
 .sec-4 {
     width: 100%;
-    padding: 80px;
+    padding: 40px 80px 40px 80px;
 }
 
 .sec-4 h5 {
@@ -781,16 +817,19 @@ option {
     display: flex;
     background-color: #E70013;
     color: #fff;
+    height: 771px;
 }
 
 .flexx-3 img {
     width: 33%;
+    height:100%;
 }
 
 .flexx-3 ul {
     padding: 10%;
-    width: 100%;
-
+    width: 67%;
+    height: 95%;
+    overflow: auto;
 }
 
 .sec-4 ul li {
@@ -813,7 +852,8 @@ option {
 .card {
     width: calc(100% / 3);
     height: 320px;
-    padding: 25px 15px 0 0;
+    overflow: auto;
+    padding: 25px 15px 25px 0;
     color: #121212;
     background: #fff;
     box-shadow: -1px -1px 4px .3px #cfcdcd;
@@ -830,9 +870,13 @@ option {
     background-color: #E70013;
     color: #fff;
 }
-
+.sec-5{
+    width: 100%;
+    height: auto;
+}
 .sec5-top {
     width: 100%;
+    height: 594px;
     padding: 60px;
     background: #B6B6B6;
     display: flex;
@@ -841,7 +885,7 @@ option {
 .sec5-top p {
     font-size: 32px;
     font-weight: 600;
-    padding-top: 100px;
+    padding-top: 40px;
     padding-right: 20px;
     background: transparent !important;
     color: #121212 !important;
@@ -850,17 +894,20 @@ option {
     text-align: start !important;
     padding-left: 40px !important;
     padding-right: 30px !important;
+    height: 95%;
+    overflow: auto;
 }
 .sec5-top img{
    width: 40%;
+   height: 100%;
 }
 
-.sec-5 p {
+.sec-5 .pp {
     font-size: 32px;
     font-weight: 600;
     color: #fff;
     background:#E70013;
-    padding: 80px 20px;
+    padding: 80px;
     line-height: 1.5;
     text-align: center;
 }
@@ -1007,6 +1054,11 @@ option {
 
 
 /* media query */
+@media(max-width:1750px) {
+   .flexx{
+    height: 500px;
+   }
+}
 @media(max-width:1400px) {
 
     /* Ar index style */
@@ -1070,7 +1122,7 @@ option {
         width: 100%;
         padding: 0 80px 80px 80px;
     }
-    .sec-5 p {
+    .sec-5 .pp {
         font-size: 25px;
         padding: 60px;
     }
@@ -1124,9 +1176,15 @@ option {
     .card p{
        font-size: 17px;
     }
-    .sec-5 p {
+    .sec-5 .pp {
         font-size: 22px;
         padding: 60px;
+    }
+    .sec-5 .sec5-top p {
+        font-size: 25px; 
+    }
+    .flexx-3{
+        height: 571px;
     }
 }
 
@@ -1297,6 +1355,10 @@ option {
         transform: scale(.92);
         transition: all .3s ease;
     }
+    .sec-5 .sec5-top p {
+        font-size: 22px;
+     
+    }
 }
 
 @media(max-width:900px) {
@@ -1320,7 +1382,7 @@ option {
         padding-left:50px;
         padding-right:50px;
     }
-    .sec-5 p {
+    .sec-5 .pp {
         font-size: 20px;
         padding: 60px;
     }
@@ -1472,6 +1534,7 @@ option {
     }
     .flexx-3 {
         flex-direction: column;
+        height: 771px;
     }
     .flexx-3 img {
         width: 100%;
@@ -1480,6 +1543,18 @@ option {
     .flexx-3 ul {
         padding: 5% 30px;
         width: 100%;
+    }
+    .sec-bottom{
+        flex-direction: column;
+    }
+    .sec-bottom .secbottom-img {
+        width: 100%;
+    }
+    .sec-bottom .flexx-right {
+        width: 100% !important;
+    }
+    .sec-bottom .flexx-right ul {
+        height: 290px !important;
     }
     .sec-4 ul li {
         font-size: 16px;
@@ -1491,13 +1566,14 @@ option {
     }
     .card{
         width: 100%;
-        height: 280px;
+        height: 220px;
     }
     .card p{
         font-size: 14px;
     }
     .sec5-top {
         width: 100%;
+        height: 700px;
         padding: 0;
         background: #B6B6B6;
         display: flex;
@@ -1511,7 +1587,7 @@ option {
         padding: 20px !important;
         width: 100%;
     }
-    .sec-5 p {
+    .sec-5 .pp {
         font-size: 16px;
         padding: 20px;
     }
@@ -1579,4 +1655,27 @@ option {
     .sec1-btns {
         gap: 30px;
     }
+}
+/* WebKit browsers */
+.scrollable-element::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.scrollable-element::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox */
+.scrollable-element {
+    scrollbar-width: thin; /* auto, thin, none */
+    scrollbar-color: rgba(8,8,8,.25) transparent; /* thumb color, track color */
 }
