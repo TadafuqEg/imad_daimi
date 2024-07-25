@@ -21,7 +21,8 @@ class Setting extends Model
         'key',
         'type',
         'value',
-        'category'
+        'category',
+        'dimensions'
     ];
 
     protected $allowedSorts = [

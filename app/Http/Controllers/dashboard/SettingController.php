@@ -32,8 +32,21 @@ class SettingController extends ApiController
         return view('website.settings.setting.edit',compact('setting'));
     }
     public function update_setting(Request $request,$id){
-        //dd($request->all());
+      
         $setting=Setting::where('id',$id)->first();
+        if($setting->dimensions!=null){
+            $dimensions=json_decode($setting->dimensions,true);
+            //dd($dimensions['width']);
+            $validator = Validator::make($request->all(), [
+                'value' => ['nullable', 'image','dimensions:width='.$dimensions['width'].',height='.$dimensions['height']],
+            ], [
+                'dimensions' => 'The image must be exactly ' . $dimensions['width'] . ' x ' . $dimensions['height'] . ' pixels.',
+            ]);
+        
+            if ($validator->fails()) {
+                return Redirect::back()->withInput()->withErrors($validator);
+            }
+        }
         if($setting->type=='file'&& array_key_exists('value',$request->all())){
             $invitation_code = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 12);
             $image = $setting->id.'_'.$invitation_code.'_'.time() . '.' . $request->value->extension();
@@ -42,6 +55,7 @@ class SettingController extends ApiController
             $path = ('/setting_images/') . $image;
             $input['label']=$request->label;
             $input['value']=$path;
+            
             $setting->fill($input)->save();
         }else{
             $input['label']=$request->label;

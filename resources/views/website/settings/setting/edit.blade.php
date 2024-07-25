@@ -48,8 +48,14 @@
                 @elseif($setting->type=='file')
                 <div class="form-group">
                     <label for="exampleInputEmail1">Value</label>
+                    @if($setting->value !=null)
                     <p for="exampleInputEmail1">Existed File: <a href="{{url($setting->value)}}" target="_blank">here</a></p>
+                    @endif
                     <input type="file"name="value"class="form-control">
+                    @if ($errors->has('value'))
+                        <p class="text-error more-info-err" style="color: red;">
+                            {{ $errors->first('value') }}</p>
+                    @endif
                 </div>
                 @endif
                 

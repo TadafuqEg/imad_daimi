@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('type')->default('string');
             $table->longtext('value')->nullable();
             $table->string('category')->default('Default');
+            $table->json('dimensions')->nullable();
             
             $table->timestamps();
         });
