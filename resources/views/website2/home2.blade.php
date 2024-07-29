@@ -456,9 +456,9 @@
             const image = document.getElementById('responsive-image');
             
             if (window.innerWidth <= 768) {
-                image.src = "{{asset('website/assets/imgs/img9.PNG')}}";
+                image.src = "{{$img2}}";
             } else {
-                image.src = "{{asset('website/assets/imgs/img1.png')}}";
+                image.src = "{{$img1}}";
             }
         }
         window.addEventListener('resize', changeImageSrc);

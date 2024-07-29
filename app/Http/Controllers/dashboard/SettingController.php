@@ -71,6 +71,8 @@ class SettingController extends ApiController
                 $input['dimensions']=json_encode(["width"=>$width,"height"=>$height]);
             }
             $setting->fill($input)->save();
+        }elseif(true){
+
         }else{
             $input['label']=$request->label;
             $input['value']=$request->value;
