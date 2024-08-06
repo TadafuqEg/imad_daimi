@@ -157,10 +157,10 @@
             <span class="fas fa-bars"></span>
         </div>
         <div class="logo">
-            <a href="#"><img alt="" loading="lazy" src="{{ app('logo') }}" /></a>
+            <a href="{{url('/')}}"><img alt="" loading="lazy" src="{{ app('logo') }}" /></a>
         </div>
         <div class="nav-items">
-            <li class="active"><a href="#">الرئيسية</a></li>
+            <li class="active"><a href="{{url('/')}}">الرئيسية</a></li>
             <li><a class="n-item-2" href="#short">نبذه عن المرشح</a></li>
             <li><a class="n-item-3" href="#news">المقال</a></li>
             <li><a class="n-item-4" href="#contact">التواصل</a></li>
@@ -311,7 +311,7 @@
 
     <div class="footer">
         <div class="footer-top">
-            <img loading="lazy" src="{{ app('logo') }}" />
+            <a href="{{url('/')}}"><img loading="lazy" src="{{ app('logo') }}" /></a>
             <div class="links">
                 <a href="">اتصل بنا</a>
                 <a href="">خريطة الموقع</a>
