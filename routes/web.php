@@ -20,6 +20,7 @@ use App\Http\Controllers\website\WebsiteHomeController;
 |
 */
 Route::get('/', [WebsiteHomeController::class, 'home'])->name('website-home');
+Route::get('/privacy', [WebsiteHomeController::class, 'privacy'])->name('privacy');
 Route::post('/contact-us', [WebsiteHomeController::class, 'contact_us'])->name('website-contact-us');
 ////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////dashboard//////////////////////////////////////

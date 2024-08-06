@@ -268,7 +268,7 @@
             <div class="links">
                 <a href="">اتصل بنا</a>
                 <a href="">خريطة الموقع</a>
-                <a href="">شروط و أحكام</a>
+                <a href="{{url('/privacy')}}">شروط و أحكام</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -452,7 +452,7 @@
         
     </script>
     <script>
-        function changeImageSrc() {
+        function changeImageSrc(){
             const image = document.getElementById('responsive-image');
             
             if (window.innerWidth <= 768) {

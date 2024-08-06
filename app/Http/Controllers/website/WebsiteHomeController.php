@@ -38,4 +38,7 @@ class WebsiteHomeController extends ApiController
         ContactUs::create(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'message'=>$request->message,'phone'=>$request->phone]);
         return $this->sendResponse(null,'سوف نقوم بالرد عليكم فى أقرب وقت');
     }
+    public function privacy(){
+        return view('website2.privacy');
+    }
 }
