@@ -97,5 +97,5 @@
         $(document).ready(function() {
             initMap();
         });
-    </script>
+  </script>
   @endpush

@@ -23,16 +23,16 @@ use File;
 class SettingController extends ApiController
 {
     public function index(){
-        $settings=Setting::orderBy('id','desc')->paginate(10);
-        return view('website.settings.index',compact('settings'));
+        $settings=Setting::orderBy('id','desc')->get();
+        return view('dashboard.settings.index',compact('settings'));
 
     }
     public function edit_setting($id){
         $setting=Setting::where('id',$id)->first();
-        return view('website.settings.setting.edit',compact('setting'));
+        return view('dashboard.settings.edit',compact('setting'));
     }
     public function update_setting(Request $request,$id){
-      
+     
         $setting=Setting::where('id',$id)->first();
         if($setting->dimensions!=null){
             $dimensions=json_decode($setting->dimensions,true);
@@ -71,8 +71,14 @@ class SettingController extends ApiController
                 $input['dimensions']=json_encode(["width"=>$width,"height"=>$height]);
             }
             $setting->fill($input)->save();
-        }elseif(true){
-
+        }elseif($setting->type=='points'){
+            $input['label']=$request->label;
+            $array = array_filter($request->value, function($value) {
+                return $value !== null;
+            });
+           
+            $input['value']=json_encode($array);
+            $setting->fill($input)->save();
         }else{
             $input['label']=$request->label;
             $input['value']=$request->value;

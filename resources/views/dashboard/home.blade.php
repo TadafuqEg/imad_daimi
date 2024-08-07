@@ -1,44 +1,34 @@
 @extends('dashboard.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Imad Daimi - dashboard home')
 @section('content')
-        <main>
-            <div class="content-section active" id="dashboard-content">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Dashboard</h1>
-                        
-                    </div>
-
-                </div>
-
-                <ul class="box-info">
-                    <li>
-                        <i class='bx bxs-calendar-check'></i>
-                        <span class="text">
-                            <h3>1020</h3>
-                            <p>New Order</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bxs-group'></i>
-                        <span class="text">
-                            <h3>2834</h3>
-                            <p>Visitors</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bxs-dollar-circle'></i>
-                        <span class="text">
-                            <h3>$2543</h3>
-                            <p>Total Sales</p>
-                        </span>
-                    </li>
-                </ul>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="row align-items-center mb-2">
+            <div class="col">
+                <h2 class="h5 page-title">Welcome!</h2>
             </div>
+            
+            </div>
+            <div style="color:#fff;text-align:center;">
+                <canvas id="canvas" width="900" height="800" style="color:#fff;text-align:center;"></canvas>
+              </div>
         
-        </main>
+        </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
       
   @endsection
   @push('scripts')
- 
-  @endpush
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.font = "75px sans-serif"; // Set the font family to sans-serif
+ctx.strokeStyle = "white"; // Set the stroke color to white
+ctx.lineWidth = 3; // Set the stroke width if needed
+ctx.strokeText("Welcome To Dashboard", 50, 90);
+  
+</script>
+@endpush

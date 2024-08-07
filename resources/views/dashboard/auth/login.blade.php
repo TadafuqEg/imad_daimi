@@ -1,176 +1,98 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Imed Daimi')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@yield('title', 'Imad Daimi - dashboard login')</title>
     <link rel="icon" type="image/x-icon" href="{{ app('logo') }}" style="transform: scale(1.2);">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <style>
-        /* Importing fonts from Google */
-
-
-/* Reseting */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #ecf0f3;
-}
-
-.wrapper {
-    max-width: 450px;
-    min-height: 500px;
-    margin: 80px auto;
-    padding: 40px 30px 30px 30px;
-    background-color: #ecf0f3;
-    border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
-}
-
-.logo {
-    width: 80px;
-    margin: auto;
-}
-
-.logo img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0px 0px 3px #5f5f5f,
-        0px 0px 0px 5px #ecf0f3,
-        8px 8px 15px #a7aaa7,
-        -8px -8px 15px #fff;
-}
-
-.wrapper .name {
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 1.3px;
-    padding-left: 10px;
-    color: #555;
-}
-
-.wrapper .form-field input {
-    width: 100%;
-    display: block;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.2rem;
-    color: #666;
-    padding: 10px 15px 10px 10px;
-    /* border: 1px solid red; */
-}
-
-.wrapper .form-field {
-    padding-left: 10px;
-    /*margin-bottom: 20px;*/
-    border-radius: 20px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-}
-
-.wrapper .form-field .fas {
-    color: #555;
-}
-
-.wrapper .btn {
-    box-shadow: none;
-    width: 100%;
-    height: 40px;
-    background-color: #03A9F4;
-    color: #fff;
-    border-radius: 25px;
-    box-shadow: 3px 3px 3px #b1b1b1,
-        -3px -3px 3px #fff;
-    letter-spacing: 1.3px;
-}
-
-.wrapper .btn:hover {
-    background-color: #039BE5;
-}
-
-.wrapper a {
-    text-decoration: none;
-    font-size: 0.8rem;
-    color: #03A9F4;
-}
-
-.wrapper a:hover {
-    color: #039BE5;
-}
-
-@media(max-width: 380px) {
-    .wrapper {
-        margin: 30px 20px;
-        padding: 40px 15px 15px 15px;
-    }
-}
-    </style>
-</head>
-
-<body class="hold-transition  sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<div class="wrapper">
-    <div class="logo">
-        <img src="{{ asset('logos/help_icon.png') }}" alt="">
-    </div>
-    <div class="text-center mt-4 name" style="text-align: center;">
-        Imed Daimi Dashboard
-    </div>
-    
-    @if ($errors->any())
-       @if($errors->has('msg'))
-        <p class="alert alert-danger"id="alert" role="alert" style="padding-top:5px;padding-bottom:5px; padding-left: 10px; background-color:brown;border-radius: 20px; color:beige;">{{ $errors->first('msg') }}</p>
-        @endif
-	@endif
-    <form class="p-3 mt-3"action="{{ route('login') }}" method="POST">
-        @csrf
-        <div style="margin-bottom: 20px;">
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="email" id="userName" placeholder="Email" value="{{old('email')}}">
-            </div>
-            @if ($errors->has('email'))
-                <p class="text-error more-info-err" style="color: red;margin-left:10px;">
-                    {{ $errors->first('email') }}</p>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/simplebar.css')}}">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/feather.css')}}">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/daterangepicker.css')}}">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="{{asset('dashboard/css/app-light.css')}}" id="lightTheme" disabled>
+    <link rel="stylesheet" href="{{asset('dashboard/css/app-dark.css')}}" id="darkTheme">
+  </head>
+  <body class="dark ">
+    <div class="wrapper vh-100">
+      <div class="row align-items-center h-100">
+        
+        <form class="col-lg-3 col-md-4 col-10 mx-auto text-center" action="{{ route('login') }}" method="POST">
+            @csrf
+           <img src="{{ app('logo') }}">
+              <h1 class="h6 mb-3">Sign in</h1>
+            @if ($errors->any())
+                @if($errors->has('msg'))
+                    <p class="alert alert-danger"id="alert" role="alert" style="padding-top:5px;padding-bottom:5px; padding-left: 10px; background-color:brown;border-radius: 20px; color:beige;">{{ $errors->first('msg') }}</p>
+                @endif
             @endif
-        </div>
-        <div style="margin-bottom: 20px;">
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
-                
+           
+          
+          
+          <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="text" id="inputEmail" class="form-control form-control-lg"  name="email" value="{{old('email')}}" placeholder="Email address" autofocus="">
+            <div style="text-align: left;">
+                @if ($errors->has('email'))
+                    <p class="text-error more-info-err" style="color: red;">
+                        {{ $errors->first('email') }}</p>
+                @endif
             </div>
-            @if ($errors->has('password'))
-                    <p class="text-error more-info-err" style="color: red;margin-left:10px;">
-                        {{ $errors->first('password') }}</p>
-            @endif
-        </div>
-        <button class="btn mt-3">Login</button>
-    </form>
-    <div class="text-center fs-6">
-        <a href="#">Forget password?</a>
+            
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control form-control-lg" placeholder="Password" >
+            <div style="text-align: left;">
+                @if ($errors->has('password'))
+                        <p class="text-error more-info-err" style="color: red;">
+                            {{ $errors->first('password') }}</p>
+                @endif
+            </div>
+            
+          </div>
+         
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Let me in</button>
+          <p class="mt-5 mb-3 text-muted">© 2024 - Imad Eldaimi</p>
+        </form>
+      </div>
     </div>
-</div>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="exponential.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	setTimeout(function() {
-$('#alert').fadeOut('fast');
-}, 5000);
-});
-</script>
+    <script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/popper.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/moment.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/simplebar.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/daterangepicker.js')}}"></script>
+    <script src="{{asset('dashboard/js/jquery.stickOnScroll.js')}}"></script>
+    <script src="{{asset('dashboard/js/tinycolor-min.js')}}"></script>
+    <script src="{{asset('dashboard/js/config.js')}}"></script>
+    <script src="{{asset('dashboard/js/apps.js')}}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function() {
+        $('#alert').fadeOut('fast');
+        }, 5000);
+        });
+        </script>
+  </body>
+</html>
 </body>
-
 </html>

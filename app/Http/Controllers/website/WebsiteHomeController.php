@@ -31,7 +31,17 @@ class WebsiteHomeController extends ApiController
         $img6=url(Setting::where('key','work-image3')->where('category','website')->where('type','file')->first()->value);
         $img7=url(Setting::where('key','article-image1')->where('category','website')->where('type','file')->first()->value);
         $img8=url(Setting::where('key','article-image2')->where('category','website')->where('type','file')->first()->value);
-        return view('website2.home2',compact('img1','img2','img3','img4','img5','img6','img7','img8'));
+        $text1=Setting::where('key','text_1')->where('category','website')->where('type','points')->first()->value;
+        $text2=Setting::where('key','text_2')->where('category','website')->where('type','points')->first()->value;
+        $text3=Setting::where('key','text_3')->where('category','website')->where('type','points')->first()->value;
+        $text4=Setting::where('key','text_4')->where('category','website')->where('type','points')->first()->value;
+        $text5=Setting::where('key','text_5')->where('category','website')->where('type','points')->first()->value;
+        $text6=Setting::where('key','text_6')->where('category','website')->where('type','points')->first()->value;
+        $text7=Setting::where('key','text_7')->where('category','website')->where('type','points')->first()->value;
+
+        $text8=Setting::where('key','text_8')->where('category','website')->where('type','textarea')->first()->value;
+        $text9=Setting::where('key','text_9')->where('category','website')->where('type','textarea')->first()->value;
+        return view('website2.home2',compact('img1','img2','img3','img4','img5','img6','img7','img8','text1','text2','text3','text4','text5','text6','text7','text8','text9'));
     }
 
     public function contact_us(Request $request){

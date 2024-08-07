@@ -29,19 +29,19 @@ class HomeController extends ApiController
         
         if ($request->has('search')) {
 
-            $help_requests=Accident::where('first_name', 'LIKE', '%' . $request->search . '%')->orWhere('phone', 'LIKE', '%' . $request->search . '%')->orWhere('last_name', 'LIKE', '%' . $request->search . '%')->paginate(10);
+            $help_requests=Accident::where('first_name', 'LIKE', '%' . $request->search . '%')->orWhere('phone', 'LIKE', '%' . $request->search . '%')->orWhere('last_name', 'LIKE', '%' . $request->search . '%')->get();
         } else {
 
-            $help_requests=Accident::orderBy('id','desc')->paginate(10);
+            $help_requests=Accident::orderBy('id','desc')->get();
         } 
-        return view('website.help_requests.index',compact('help_requests'));
+        return view('dashboard.help_requests.index',compact('help_requests'));
     }
 
     public function help_request($id){
         $help_request=Accident::where('id',$id)->first();
         $help_request->location=json_decode($help_request->location,true);
         //dd($help_request);
-        return view('website.help_requests.view',compact('help_request'));
+        return view('dashboard.help_requests.view',compact('help_request'));
 
     }
 
@@ -49,19 +49,19 @@ class HomeController extends ApiController
         
         if ($request->has('search')) {
 
-            $volunteers=Volunteer::where('first_name', 'LIKE', '%' . $request->search . '%')->orWhere('phone', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->orWhere('last_name', 'LIKE', '%' . $request->search . '%')->paginate(10);
+            $volunteers=Volunteer::where('first_name', 'LIKE', '%' . $request->search . '%')->orWhere('phone', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->orWhere('last_name', 'LIKE', '%' . $request->search . '%')->get();
         } else {
 
-            $volunteers=Volunteer::orderBy('id','desc')->paginate(10);
+            $volunteers=Volunteer::orderBy('id','desc')->get();
         } 
-        return view('website.volunteers.index',compact('volunteers'));
+        return view('dashboard.volunteers.index',compact('volunteers'));
     }
 
     public function volunteer($id){
         $volunteer=Volunteer::where('id',$id)->first();
         $volunteer->location=json_decode($volunteer->location,true);
         //dd($volunteer);
-        return view('website.volunteers.view',compact('volunteer'));
+        return view('dashboard.volunteers.view',compact('volunteer'));
 
     }
 ///////////////////////////////////////////////////////FAQs///////////////////////////////////////////////////////
@@ -150,17 +150,17 @@ class HomeController extends ApiController
             //$contact_us=ContactUs::all();
 
         }else{
-            $contact_us=ContactUs::orderBy('id','desc')->paginate(10);
+            $contact_us=ContactUs::orderBy('id','desc')->get();
         }
         
-        return view('website.contact_us.index',compact('contact_us'));
+        return view('dashboard.contact_us.index',compact('contact_us'));
     }
 
     
     public function question($id){
         $question=ContactUs::where('id',$id)->first();
        
-        return view('website.contact_us.view',compact('question'));
+        return view('dashboard.contact_us.view',compact('question'));
 
     }
     //////////////////////////////////////////////////////////////////////////
@@ -168,6 +168,6 @@ class HomeController extends ApiController
         $recommendations=Recommendation::orderBy('id','desc')->paginate(10);
     
     
-        return view('website.recommendations.index',compact('recommendations'));
+        return view('dashboard.recommendations.index',compact('recommendations'));
     }
 }
